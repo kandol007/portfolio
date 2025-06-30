@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -20,7 +23,10 @@
 }
 
 body {
-  background: var(--background);
+  background: #090115;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+.transparent-video {
+  pointer-events: none;
 }
