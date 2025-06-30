@@ -47,7 +47,7 @@ export default function ContactPage() {
         >
           <h1 className="text-4xl font-bold text-center mb-6">Contact Me</h1>
           <p className="text-gray-400 text-center max-w-2xl mx-auto mb-12">
-            Have a question, proposal, or just want to say hi? I'm always open to new opportunities and collaboration.
+            Have a question, proposal, or just want to say hi? I&apos;m always open to new opportunities and collaboration.
           </p>
 
           {/* Contact Info */}

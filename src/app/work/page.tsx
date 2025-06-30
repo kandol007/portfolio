@@ -1,7 +1,6 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import { useRef } from "react";
 import StarBackground from "@/components/StarBackground"; // Adjust path if needed
 

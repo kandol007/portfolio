@@ -48,13 +48,13 @@ export default function AboutPage() {
   <div className="flex-1">
     <h1 className="text-4xl font-bold mb-4">About Me</h1>
     <p className="text-gray-300 leading-relaxed text-justify">
-       👋 I'm Ritik Kumar, a passionate full stack developer and data enthusiast from Meerut, India. I specialize in crafting beautiful, functional web experiences using modern technologies like <strong>React</strong>, <strong>Next.js</strong>, and <strong>Node.js</strong>, while also exploring the power of <strong>Python</strong> and <strong>machine learning</strong> to solve real-world problems.
+       👋 I&apos;m Ritik Kumar, a passionate full stack developer and data enthusiast from Meerut, India. I specialize in crafting beautiful, functional web experiences using modern technologies like <strong>React</strong>, <strong>Next.js</strong>, and <strong>Node.js</strong>, while also exploring the power of <strong>Python</strong> and <strong>machine learning</strong> to solve real-world problems.
          <br /><br />
        💡 With a strong eye for design and scalable architecture, I bridge the gap between elegant frontend interfaces and robust backend systems. I enjoy building tools that make a difference—from intuitive UI components to automation tools, job systems, AI interview assistants, and real-time dashboards.
          <br /><br />
-        📊 I'm also proficient in data analytics using tools like <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>, and I love visualizing insights that drive decisions. Currently, I’m diving deeper into data visualization, microservices, and serverless architectures.
+        📊 I'm also proficient in data analytics using tools like <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>, and I love visualizing insights that drive decisions. Currently, I&apos;m diving deeper into data visualization, microservices, and serverless architectures.
          <br /><br />
-        🚀 I believe in writing clean, maintainable code and collaborating on products that are fast, secure, and accessible. Let’s build something meaningful together! 🤝
+        🚀 I believe in writing clean, maintainable code and collaborating on products that are fast, secure, and accessible. Let&apos;s build something meaningful together! 🤝
     </p>
   </div>
 

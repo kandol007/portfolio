@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import StarBackground from "@/components/StarBackground"; // Adjust path if needed
+import StarBackground from "@/StarBackground" // Adjust path if needed
 
 const allProjects = [
   {
@@ -34,7 +34,12 @@ export default function ProjectsPage() {
   };
 
   useEffect(() => {
-    if (inView) loadMore();
+    if (inView) {
+      const timer = setTimeout(() => {
+        loadMore();
+      }, 500); // Delay to allow for smooth loading
+      return () => clearTimeout(timer);
+    }
   }, [inView]);
 
   const visibleProjects = allProjects.slice(0, visibleCount);

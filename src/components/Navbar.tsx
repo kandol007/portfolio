@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { MouseEvent, MutableRefObject } from "react";
+import type { MouseEvent } from "react";
 
 
 export default function Navbar() {
