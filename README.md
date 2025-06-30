@@ -15,7 +15,6 @@ Welcome to my personal portfolio website! This is a modern, responsive, and inte
 - [React](w)
 - [Tailwind CSS](w)
 - [Framer Motion](w) – for animations
-- [UploadThing](w) – for file uploads
 - [Nodemailer](w) – for contact/job form email handling
 - [Vercel](w) – for deployment
 - [TypeScript](w) *(optional)*
