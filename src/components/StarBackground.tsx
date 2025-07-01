@@ -6,7 +6,7 @@ import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { Points as ThreePoints } from "three";
 import { inSphere } from "maath/random";
 
-const StarBackground = (props: JSX.IntrinsicElements['group']) => {
+const StarBackground = () => {
   const ref = useRef<ThreePoints>(null);
 
   const [positions] = useState<Float32Array>(
