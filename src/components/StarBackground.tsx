@@ -6,7 +6,7 @@ import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { Points as ThreePoints } from "three";
 import { inSphere } from "maath/random";
 
-const StarBackground = (props: any) => {
+const StarBackground = (props: ThreePoints) => {
   const ref = useRef<ThreePoints>(null);
 
   // ✅ Use `inSphere` properly — it returns a Float32Array filled with valid values
