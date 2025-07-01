@@ -52,7 +52,7 @@ export default function AboutPage() {
          <br /><br />
        💡 With a strong eye for design and scalable architecture, I bridge the gap between elegant frontend interfaces and robust backend systems. I enjoy building tools that make a difference—from intuitive UI components to automation tools, job systems, AI interview assistants, and real-time dashboards.
          <br /><br />
-        📊 I'm also proficient in data analytics using tools like <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>, and I love visualizing insights that drive decisions. Currently, I&apos;m diving deeper into data visualization, microservices, and serverless architectures.
+        📊 I&apos;m also proficient in data analytics using tools like <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>, and I love visualizing insights that drive decisions. Currently, I&apos;m diving deeper into data visualization, microservices, and serverless architectures.
          <br /><br />
         🚀 I believe in writing clean, maintainable code and collaborating on products that are fast, secure, and accessible. Let&apos;s build something meaningful together! 🤝
     </p>
