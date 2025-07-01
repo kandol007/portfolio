@@ -31,10 +31,9 @@ export default function ProjectsPage() {
   if (visibleCount < allProjects.length) {
     setVisibleCount((prev) => prev + 3);
   }
-}, [visibleCount, allProjects.length]);
+}, [visibleCount]);
 
-
-  useEffect(() => {
+useEffect(() => {
   if (inView) {
     const timer = setTimeout(() => {
       loadMore();
