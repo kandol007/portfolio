@@ -23,7 +23,7 @@ const skills = [
 { name: "Redux", icon: "/skills/redux.png" },
 { name: "GraphQL", icon: "/skills/graphql.png" },
 { name: "Framer Motion", icon: "/skills/framer.png" },
-{ name: "Firebase", icon: "/skills/firebase.png" },
+{ name: "Firebase", icon: "/skills/Firebase.png" },
 { name: "Figma", icon: "/skills/figma.png" },
 { name: "Docker", icon: "/skills/docker.svg" },
 { name: "Express.js", icon: "/skills/express.png" },
