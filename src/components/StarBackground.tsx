@@ -6,15 +6,12 @@ import { Points, PointMaterial, Preload } from "@react-three/drei";
 import { Points as ThreePoints } from "three";
 import { inSphere } from "maath/random";
 
-const StarBackground = (props: ThreePoints) => {
+const StarBackground = (props: JSX.IntrinsicElements['group']) => {
   const ref = useRef<ThreePoints>(null);
 
-  // ✅ Use `inSphere` properly — it returns a Float32Array filled with valid values
- const [positions] = useState<Float32Array>(
-  () => new Float32Array(inSphere(new Float32Array(5000 * 3), { radius: 1.2 }))
-);
-
-
+  const [positions] = useState<Float32Array>(
+    () => new Float32Array(inSphere(new Float32Array(5000 * 3), { radius: 1.2 }))
+  );
 
   useFrame((_, delta) => {
     if (ref.current) {
@@ -24,7 +21,7 @@ const StarBackground = (props: ThreePoints) => {
   });
 
   return (
-    <group rotation={[0, 0, Math.PI / 4]} {...props}>
+    <group {...props}>
       <Points ref={ref} positions={positions} stride={3} frustumCulled>
         <PointMaterial
           transparent
