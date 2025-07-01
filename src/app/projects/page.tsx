@@ -40,7 +40,7 @@ export default function ProjectsPage() {
       }, 500); // Delay to allow for smooth loading
       return () => clearTimeout(timer);
     }
-  }, [loadMore],[inView]);
+  }, [loadMore, inView]);
 
   const visibleProjects = allProjects.slice(0, visibleCount);
   const hasMore = visibleCount < allProjects.length;
