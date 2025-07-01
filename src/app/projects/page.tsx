@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import StarBackground from "@/StarBackground" // Adjust path if needed
+import StarBackground from "@/components/StarBackground" // Adjust path if needed
 
 const allProjects = [
   {
