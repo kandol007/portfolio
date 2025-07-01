@@ -27,20 +27,21 @@ export default function ProjectsPage() {
   const [visibleCount, setVisibleCount] = useState(3);
   const { ref, inView } = useInView({ threshold: 0.1 });
 
-  const loadMore = () => {
-    if (visibleCount < allProjects.length) {
-      setVisibleCount((prev) => prev + 3);
-    }
-  };
+  const loadMore = useCallback(() => {
+  if (visibleCount < allProjects.length) {
+    setVisibleCount((prev) => prev + 3);
+  }
+}, [visibleCount, allProjects.length]);
+
 
   useEffect(() => {
-    if (inView) {
-      const timer = setTimeout(() => {
-        loadMore();
-      }, 500); // Delay to allow for smooth loading
-      return () => clearTimeout(timer);
-    }
-  }, [loadMore, inView]);
+  if (inView) {
+    const timer = setTimeout(() => {
+      loadMore();
+    }, 500);
+    return () => clearTimeout(timer);
+  }
+}, [inView, loadMore]);
 
   const visibleProjects = allProjects.slice(0, visibleCount);
   const hasMore = visibleCount < allProjects.length;
