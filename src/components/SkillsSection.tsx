@@ -39,7 +39,7 @@ const skills = [
 
 const SkillsSection = () => {
   return (
-    <section className="relative z-[50] py-20 bg-transparent">
+    <section className="relative z-[40] py-20 bg-transparent">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-bold text-white text-center mb-12">
           My Tech Stack
