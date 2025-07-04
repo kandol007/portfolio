@@ -10,7 +10,7 @@ const StarBackground = () => {
   const ref = useRef<ThreePoints>(null);
 
   const [positions] = useState<Float32Array>(
-    () => new Float32Array(inSphere(new Float32Array(5000 * 3), { radius: 1.2 }))
+    () => new Float32Array(inSphere(new Float32Array(1500 * 3), { radius: 1.2 }))
   );
 
   useFrame((_, delta) => {
@@ -26,7 +26,7 @@ const StarBackground = () => {
         <PointMaterial
           transparent
           color="white"
-          size={0.004}
+          size={0.003}
           sizeAttenuation={true}
           depthWrite={false}
         />

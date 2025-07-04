@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import StarBackground from "@/components/StarBackground" // Adjust path if needed
 
@@ -12,7 +12,7 @@ const allProjects = [
     title: "Portfolio Website",
     description: "Crafted a sleek and interactive personal portfolio using Next.js, Tailwind CSS, and Framer Motion to showcase projects, skills, and experience. Features smooth animations, responsive design, and a dark/light theme toggle for an engaging user experience across all devices. Includes animated counters, scroll-based section reveals, and a downloadable resume for recruiters.",
     image: "/projects/portfolio.png",
-    link: "https://your-portfolio-url.com",
+    link: "https://portfolio-tsr1.vercel.app/",
   },
   {
    title: "Website for a Software Company",
@@ -27,20 +27,20 @@ export default function ProjectsPage() {
   const [visibleCount, setVisibleCount] = useState(3);
   const { ref, inView } = useInView({ threshold: 0.1 });
 
-  const loadMore = useCallback(() => {
-  if (visibleCount < allProjects.length) {
-    setVisibleCount((prev) => prev + 3);
-  }
-}, [visibleCount]);
+  const loadMore = () => {
+    if (visibleCount < allProjects.length) {
+      setVisibleCount((prev) => prev + 3);
+    }
+  };
 
-useEffect(() => {
-  if (inView) {
-    const timer = setTimeout(() => {
-      loadMore();
-    }, 500);
-    return () => clearTimeout(timer);
-  }
-}, [inView, loadMore]);
+  useEffect(() => {
+    if (inView) {
+      const timer = setTimeout(() => {
+        loadMore();
+      }, 500); // Delay to allow for smooth loading
+      return () => clearTimeout(timer);
+    }
+  }, [inView]);
 
   const visibleProjects = allProjects.slice(0, visibleCount);
   const hasMore = visibleCount < allProjects.length;
@@ -86,7 +86,7 @@ function ProjectCard({
       transition={{ duration: 0.4, delay: index * 0.05 }}
       className="relative group bg-gray-900 rounded-lg overflow-hidden break-inside-avoid shadow-lg"
     >
-      <div className="relative z-50">
+      <div className="relative z-20">
         <Image
           src={image}
           alt={title}

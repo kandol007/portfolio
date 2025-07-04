@@ -79,6 +79,14 @@ const certifications = {
       link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_be54ZaKrAZDRCGmJg_1750254795305_completion_certificate.pdf",
       logo: "/certifications/EA.png",
       tags: ["Class Design", "APIs", "Code Readability","Data Structures", "Feature Design", "Feature Proposal","Game Engine Technology", "Object Oriented Design"]
+    },
+    {
+      title: "Hewlett Packard Enterprise: Software Engineering	Job	Simulation",
+      issuer: "Forage",
+      description: "✅ Designed and implemented a RESTful web service using Java Spring Boot to manage employee data. Wrote a clear project proposal, supported JSON data upload, and developed unit tests to validate performance and reliability.",
+      link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_be54ZaKrAZDRCGmJg_1751388247161_completion_certificate.pdf",
+      logo: "/certifications/hpe.png",
+      tags: ["Communication", "GreenLake Cloud Platform","HTTP requests","Java","Java Spring Boot","JSON","JUnit","Mockito","RESTful Development","RESTful Web Development","Unit Testing"]
     }
   ]
 };

@@ -74,7 +74,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="z-50 absolute right-0 top-full mt-2 w-64 rounded-xl bg-[#090115]/80 backdrop-blur-2xl text-white shadow-xl z-50 p-4">
+                className="z-60 absolute right-0 top-full mt-2 w-64 rounded-xl bg-[#090115]/80 backdrop-blur-2xl text-white shadow-xl z-50 p-4">
                 <div className="flex flex-col gap-2">
                   {links.map(({ href, label }) => (
                     <Link
