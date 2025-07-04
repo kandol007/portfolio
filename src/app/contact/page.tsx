@@ -52,22 +52,22 @@ export default function ContactPage() {
 
           {/* Contact Info */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
-            <motion.div whileHover={{ scale: 1.05 }} className="relative z-[50] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500">
+            <motion.div whileHover={{ scale: 1.05 }} className="relative z-[40] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500">
               <Mail className="w-6 h-6 text-indigo-400 mb-2" />
               <span className="text-sm text-gray-300">ritikkandolrk@gmail.com</span>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} className="relative z-[50] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500">
+            <motion.div whileHover={{ scale: 1.05 }} className="relative z-[40] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500">
               <Phone className="w-6 h-6 text-indigo-400 mb-2" />
               <span className="text-sm text-gray-300">(+91) 7078594541</span>
             </motion.div>
-            <motion.div whileHover={{ scale: 1.05 }} className="relative z-[50] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500">
+            <motion.div whileHover={{ scale: 1.05 }} className="relative z-[40] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500">
               <MapPin className="w-6 h-6 text-indigo-400 mb-2" />
               <span className="text-sm text-gray-300">Meerut, Uttar Pradesh</span>
             </motion.div>
           </div>
 
           {/* WhatsApp Button */}
-          <div className="relative z-[50] mb-12 text-center">
+          <div className="relative z-[40] mb-12 text-center">
             <motion.a
               whileHover={{ scale: 1.1 }}
               href="https://wa.me/917078594541"
@@ -98,7 +98,7 @@ export default function ContactPage() {
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="relative z-[50] space-y-6 bg-transparent backdrop-blur-sm  p-8 rounded-xl shadow-md"
+            className="relative z-[40] space-y-6 bg-transparent backdrop-blur-sm  p-8 rounded-xl shadow-md"
           >
             <div>
               <label className="block text-sm text-gray-400 mb-1">Name</label>
