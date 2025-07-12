@@ -45,12 +45,22 @@ const certifications = {
   ],
   "Data Analytics": [
     {
-      title: "Example Now Adding Soon",
-      issuer: "Example Issuer",
-      description: "Eight-course professional certificate by Google on data analysis, spreadsheets, SQL, and visualization.",
-      link: "https://www.udemy.com/certificate/UC-efd97ae2-6008-45e6-a528-4f33b96880d4/",
-      logo: "/certifications/ga.png",
-      tags: ["Data Analysis", "SQL", "Spreadsheets", "Visualization"]
+      title: "Beginner's Guide to Data & Data Analytics, by SF Data School",
+      issuer: "Udemy",
+      description: "ECompleted the Beginner’s Guide to Data & Data Analytics by SF Data School, gaining foundational knowledge in data analysis, data types, data cleaning, and the role of data in decision-making.",
+      link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-e5a24bff-475b-4102-8aec-f091bfec2818.pdf",
+      logo: "/certifications/udemy.png",
+      tags: ["Data Analytics Fundamentals", "Understanding Structured vs Unstructured Data", "Basic Data Cleaning Techniques", "Introduction to Data-Driven Decision Making", "Analytical Thinking", "Spreadsheet and Tool Familiarity (Excel, Google Sheets)"]
+    }
+  ],
+   "Artificial Intelligence": [
+    {
+      title: "Introduction to GenAI and Prompting",
+      issuer: "Lets Upgrade",
+      description: "Completed a foundational course on Generative AI and Prompting, learning how to effectively interact with AI models using techniques like zero-shot, few-shot, and chain-of-thought prompting. Gained practical skills to apply GenAI tools for content creation, summarization, coding, and problem-solving.",
+      link: "/certifications/Introduction to GenAI and Prompting.pdf",
+      logo: "/certifications/letsupgrade.png",
+      tags: ["Generative AI Fundamentals", "Prompt Engineering", "Zero-shot, Few-shot, and Chain-of-Thought Prompting", "Task Automation", "AI Literacy", "Critical Thinking", "Ethical AI Use"]
     }
   ],
   "Software Engineering": [
@@ -87,6 +97,16 @@ const certifications = {
       link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_be54ZaKrAZDRCGmJg_1751388247161_completion_certificate.pdf",
       logo: "/certifications/hpe.png",
       tags: ["Communication", "GreenLake Cloud Platform","HTTP requests","Java","Java Spring Boot","JSON","JUnit","Mockito","RESTful Development","RESTful Web Development","Unit Testing"]
+    }
+  ],
+  "Goverment Certifications": [
+    {
+      title: "Bhartiya Nagrik Shurakhsa Sahita, 2023",
+      issuer: "Ministry of Home Affaris, Government of India",
+      description: "✅ This certification reflects my awareness and understanding of the newly introduced legal framework aimed at enhancing citizen safety and public justice mechanisms in India. It acknowledges my efforts in civic engagement and my commitment to spreading awareness about crucial national legal reforms.",
+      link: "/certifications/Bhartiya Nagrik Shurakhsa Sahita, 2023.jpg",
+      logo: "/certifications/MoHAgov.png",
+      tags: ["Civic Awareness", "Legal Literacy","Analytical Thinking", "Attention to Detail","Responsible Citizenship", "Public Policy Understanding"]
     }
   ]
 };
