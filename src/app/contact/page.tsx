@@ -2,9 +2,10 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Phone, MapPin, MessageSquareText } from "lucide-react";
-import StarBackground from "@/components/StarBackground"; // Adjust path if needed
+import { Mail, Phone, MapPin, MessageSquareText, Github } from "lucide-react";
+import dynamic from "next/dynamic";
 
+const StarBackground = dynamic(() => import("@/components/StarBackground"), { ssr: false });
 
 export default function ContactPage() {
   const ref = useRef(null);
@@ -37,7 +38,7 @@ export default function ContactPage() {
   return (
     <div className="relative min-h-screen bg-transparent text-white">
       <StarBackground />
-  
+
       <div className="max-w-4xl mx-auto px-4 py-24">
         <motion.div
           ref={ref}
@@ -51,7 +52,7 @@ export default function ContactPage() {
           </p>
 
           {/* Contact Info */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             <motion.div whileHover={{ scale: 1.05 }} className="relative z-[40] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500">
               <Mail className="w-6 h-6 text-indigo-400 mb-2" />
               <span className="text-sm text-gray-300">ritikkandolrk@gmail.com</span>
@@ -64,6 +65,16 @@ export default function ContactPage() {
               <MapPin className="w-6 h-6 text-indigo-400 mb-2" />
               <span className="text-sm text-gray-300">Meerut, Uttar Pradesh</span>
             </motion.div>
+            <motion.a
+              href="https://github.com/kandol007"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              className="relative z-[40] flex flex-col items-center bg-transparent backdrop-blur-sm p-6 rounded-xl border-l-4 border-indigo-500 cursor-pointer"
+            >
+              <Github className="w-6 h-6 text-indigo-400 mb-2" />
+              <span className="text-sm text-gray-300">kandol007</span>
+            </motion.a>
           </div>
 
           {/* WhatsApp Button */}

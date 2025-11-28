@@ -5,7 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import StarBackground from "@/components/StarBackground" // Adjust path if needed
+import dynamic from "next/dynamic";
+
+const StarBackground = dynamic(() => import("@/components/StarBackground"), { ssr: false });
 
 const allProjects = [
   {
@@ -15,12 +17,35 @@ const allProjects = [
     link: "https://portfolio-tsr1.vercel.app/",
   },
   {
-   title: "Website for a Software Company",
-   description: "Designed and developed the official website for Plutobyte Technologies Pvt. Ltd., featuring a responsive UI, a Markdown-powered blog section, and on-page SEO enhancements. Integrated a lightweight custom CMS for seamless content updates. Built with Next.js and Tailwind CSS to ensure optimal performance, accessibility, and scalability across devices.",
-   image: "/projects/plutobyte.png",
-   link: "https://plutobyte.io",
+    title: "Website for a Software Company",
+    description: "Designed and developed the official website for Plutobyte Technologies Pvt. Ltd., featuring a responsive UI, a Markdown-powered blog section, and on-page SEO enhancements. Integrated a lightweight custom CMS for seamless content updates. Built with Next.js and Tailwind CSS to ensure optimal performance, accessibility, and scalability across devices.",
+    image: "/projects/plutobyte.png",
+    link: "https://plutobyte.io",
   },
-  // Add more projects as needed
+  {
+    title: "Emotion AI",
+    description: "Real-time facial expression recognition powered by deep learning. Built with Next.js and FastAPI, this application processes images locally to detect emotions without compromising privacy.",
+    image: "/projects/emotionai.png",
+    link: "https://emotion-detection-master.vercel.app/",
+  },
+  {
+    title: "HomeBrick",
+    description: "A comprehensive real estate platform for finding dream homes and properties in Noida, Meerut, and Himachal. Features transparent deals, prime locations, and genuine opportunities for buyers and investors.",
+    image: "/projects/homebrick.png",
+    link: "https://www.homebrick.in/",
+  },
+  {
+    title: "Mini SOW",
+    description: "A specialized management tool for handling Inventory Management. Streamlines the process of tracking project requirements, deliverables, and timelines.",
+    image: "/projects/minisow.png",
+    link: "http://141.148.217.120/login",
+  },
+  {
+    title: "Ritual Buddy",
+    description: "Your trusted platform for authentic religious ceremonies and spiritual guidance. Connects users with experienced pandits for seamless booking of rituals, puja services, and astrology consultations.",
+    image: "/projects/ritualbuddy.png",
+    link: "https://www.ritualbuddy.in/",
+  },
 ];
 
 export default function ProjectsPage() {
@@ -50,7 +75,7 @@ export default function ProjectsPage() {
       <StarBackground />
       <h1 className="text-4xl font-bold text-center mb-12">My Projects</h1>
 
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 max-w-7xl mx-auto space-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {visibleProjects.map((project, index) => (
           <ProjectCard key={index} {...project} index={index} />
         ))}
@@ -84,15 +109,17 @@ function ProjectCard({
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.4, delay: index * 0.05 }}
-      className="relative group bg-gray-900 rounded-lg overflow-hidden break-inside-avoid shadow-lg"
+      className="relative group bg-gray-900 rounded-lg overflow-hidden shadow-lg flex flex-col h-full"
     >
-      <div className="relative z-20">
+      <div className="relative z-20 h-48 overflow-hidden">
         <Image
           src={image}
           alt={title}
           width={600}
           height={400}
-          className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={index < 2}
         />
 
         {/* Gradient overlay */}
@@ -110,12 +137,10 @@ function ProjectCard({
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         <h2 className="text-xl font-semibold mb-2">{title}</h2>
-        <p className="text-gray-300 text-sm">{description}</p>
+        <p className="text-gray-300 text-sm flex-grow">{description}</p>
       </div>
     </motion.div>
   );
 }
-
-

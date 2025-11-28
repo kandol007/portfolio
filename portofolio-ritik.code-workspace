@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../dragdropcloths"
+		},
+		{
+			"path": "../Android"
+		},
+		{
+			"path": "../plutobyte"
+		},
+		{
+			"path": "../Forge"
+		},
+		{
+			"path": "../Python"
+		}
+	]
+}

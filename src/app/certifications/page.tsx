@@ -5,12 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { Code, Database, FileCode, BarChart2, Activity } from "lucide-react";
-import StarBackground from "@/components/StarBackground";
+import dynamic from "next/dynamic";
 import React from "react";
 
+const StarBackground = dynamic(() => import("@/components/StarBackground"), { ssr: false });
+
 const tagIcons: Record<string, React.ReactElement> = {
-  "HTML": <Code className="w-3.5 h-3.5 mr-1" />, 
-  "CSS": <Code className="w-3.5 h-3.5 mr-1" />, 
+  "HTML": <Code className="w-3.5 h-3.5 mr-1" />,
+  "CSS": <Code className="w-3.5 h-3.5 mr-1" />,
   "JavaScript": <Code className="w-3.5 h-3.5 mr-1" />,
   "React": <FileCode className="w-3.5 h-3.5 mr-1" />,
   "Next.js": <FileCode className="w-3.5 h-3.5 mr-1" />,
@@ -40,20 +42,29 @@ const certifications = {
       description: "✅ Built and deployed full-stack web applications using the MERN stack—MongoDB, Express.js, React, and Node.js. Gained hands-on experience with RESTful APIs, state management, authentication, CRUD operations, and deploying applications to cloud platforms. ",
       link: "https://www.udemy.com/certificate/UC-22157b14-f898-4d34-9bc3-795b4581350e/",
       logo: "/certifications/udemy.png",
-      tags: ["Full-Stack Web Development", "CSS", "JavaScript", "React","React Router","RESTful API Design","API Integration & Fetching","Git & Version Control"]
+      tags: ["Full-Stack Web Development", "CSS", "JavaScript", "React", "React Router", "RESTful API Design", "API Integration & Fetching", "Git & Version Control"]
+    },
+    {
+      title: "GraphQL for Beginners",
+      issuer: "Lets Upgrade",
+      description: "Completed a beginner-level course on GraphQL, learning how to design, query, and manage APIs using schema-based data fetching. Gained hands-on experience with queries, mutations, resolvers, and integrating GraphQL into modern web applications.",
+      link: "/certifications/GraphQL for Beginners.pdf",
+      logo: "/certifications/letsupgrade.png",
+      tags: ["GraphQL", "API Development", "Web Development", "Backend Development", "Queries and Mutations", "Schema Design", "Modern Web APIs"]
+    },
+    {
+      title: "JavaScript Bootcamp",
+      issuer: "Lets Upgrade",
+      description: "Completed an intensive bootcamp covering core JavaScript fundamentals, DOM manipulation, asynchronous programming, and essential concepts for modern web development. Built hands-on skills to create interactive and dynamic web applications.",
+      link: "/certifications/JavaScript Bootcamp.pdf",
+      logo: "/certifications/letsupgrade.png",
+      tags: ["JavaScript", "Web Development", "Frontend Development", "Async Programming", "DOM Manipulation", "ES6+", "Programming Fundamentals"]
     }
   ],
   "Data Analytics": [
-    {
-      title: "Beginner's Guide to Data & Data Analytics, by SF Data School",
-      issuer: "Udemy",
-      description: "ECompleted the Beginner’s Guide to Data & Data Analytics by SF Data School, gaining foundational knowledge in data analysis, data types, data cleaning, and the role of data in decision-making.",
-      link: "https://udemy-certificate.s3.amazonaws.com/pdf/UC-e5a24bff-475b-4102-8aec-f091bfec2818.pdf",
-      logo: "/certifications/udemy.png",
-      tags: ["Data Analytics Fundamentals", "Understanding Structured vs Unstructured Data", "Basic Data Cleaning Techniques", "Introduction to Data-Driven Decision Making", "Analytical Thinking", "Spreadsheet and Tool Familiarity (Excel, Google Sheets)"]
-    }
+
   ],
-   "Artificial Intelligence": [
+  "Artificial Intelligence": [
     {
       title: "Introduction to GenAI and Prompting",
       issuer: "Lets Upgrade",
@@ -61,7 +72,8 @@ const certifications = {
       link: "/certifications/Introduction to GenAI and Prompting.pdf",
       logo: "/certifications/letsupgrade.png",
       tags: ["Generative AI Fundamentals", "Prompt Engineering", "Zero-shot, Few-shot, and Chain-of-Thought Prompting", "Task Automation", "AI Literacy", "Critical Thinking", "Ethical AI Use"]
-    }
+    },
+
   ],
   "Software Engineering": [
     {
@@ -70,7 +82,7 @@ const certifications = {
       description: "✅ Gained a strong foundation in core computer science concepts by mastering Data Structures and Algorithms using C and C++. Covered arrays, linked lists, stacks, queues, trees, graphs, sorting, searching, recursion, and dynamic programming, with a focus on problem-solving and time-space optimization.",
       link: "https://www.udemy.com/certificate/UC-efd97ae2-6008-45e6-a528-4f33b96880d4/",
       logo: "/certifications/udemy.png",
-      tags: ["Data Structures", "Algorithms","Time & Space Complexity Analysis", "Problem Solving","Memory Management in C/C++", "OOP in C++","Algorithm Optimization Techniques"]
+      tags: ["Data Structures", "Algorithms", "Time & Space Complexity Analysis", "Problem Solving", "Memory Management in C/C++", "OOP in C++", "Algorithm Optimization Techniques"]
     }
   ],
   "Forage": [
@@ -88,7 +100,7 @@ const certifications = {
       description: "✅ Proposed a new feature for EA Sports College Football with a detailed proposal, designed a C++ class diagram and header file, and optimized the codebase by fixing a bug and improving performance with a better data structure.",
       link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/j43dGscQHtJJ57N54/a77WE3de8qrxWferQ_j43dGscQHtJJ57N54_be54ZaKrAZDRCGmJg_1750254795305_completion_certificate.pdf",
       logo: "/certifications/EA.png",
-      tags: ["Class Design", "APIs", "Code Readability","Data Structures", "Feature Design", "Feature Proposal","Game Engine Technology", "Object Oriented Design"]
+      tags: ["Class Design", "APIs", "Code Readability", "Data Structures", "Feature Design", "Feature Proposal", "Game Engine Technology", "Object Oriented Design"]
     },
     {
       title: "Hewlett Packard Enterprise: Software Engineering	Job	Simulation",
@@ -96,7 +108,7 @@ const certifications = {
       description: "✅ Designed and implemented a RESTful web service using Java Spring Boot to manage employee data. Wrote a clear project proposal, supported JSON data upload, and developed unit tests to validate performance and reliability.",
       link: "https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/fgHAi6dLhpRsGKyyN/da2T3WZCbMAJD7bNB_fgHAi6dLhpRsGKyyN_be54ZaKrAZDRCGmJg_1751388247161_completion_certificate.pdf",
       logo: "/certifications/hpe.png",
-      tags: ["Communication", "GreenLake Cloud Platform","HTTP requests","Java","Java Spring Boot","JSON","JUnit","Mockito","RESTful Development","RESTful Web Development","Unit Testing"]
+      tags: ["Communication", "GreenLake Cloud Platform", "HTTP requests", "Java", "Java Spring Boot", "JSON", "JUnit", "Mockito", "RESTful Development", "RESTful Web Development", "Unit Testing"]
     }
   ],
   "Goverment Certifications": [
@@ -106,7 +118,7 @@ const certifications = {
       description: "✅ This certification reflects my awareness and understanding of the newly introduced legal framework aimed at enhancing citizen safety and public justice mechanisms in India. It acknowledges my efforts in civic engagement and my commitment to spreading awareness about crucial national legal reforms.",
       link: "/certifications/Bhartiya Nagrik Shurakhsa Sahita, 2023.jpg",
       logo: "/certifications/MoHAgov.png",
-      tags: ["Civic Awareness", "Legal Literacy","Analytical Thinking", "Attention to Detail","Responsible Citizenship", "Public Policy Understanding"]
+      tags: ["Civic Awareness", "Legal Literacy", "Analytical Thinking", "Attention to Detail", "Responsible Citizenship", "Public Policy Understanding"]
     }
   ]
 };
@@ -163,6 +175,7 @@ export default function CertificationsPage() {
                                   width={64}
                                   height={64}
                                   className="rounded"
+                                  sizes="64px"
                                 />
                               </motion.div>
                             )}

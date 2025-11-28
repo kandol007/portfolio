@@ -3,8 +3,10 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import StarBackground from "@/components/StarBackground";
-import { BadgeCheck, Code, Database, FileCode2, Layers, Server, BarChart2, BookOpen, Brain, TerminalSquare, Code2, Settings2, } from "lucide-react";
+import dynamic from "next/dynamic";
+import { BadgeCheck, Code, Database, FileCode2, Layers, Server, BarChart2, BookOpen, Brain, TerminalSquare, Code2, Settings2, Github } from "lucide-react";
+
+const StarBackground = dynamic(() => import("@/components/StarBackground"), { ssr: false });
 
 const skills = [
   { name: "React.js", level: 90, icon: <Code className="w-4 h-4 mr-2 inline-block" /> },
@@ -38,37 +40,39 @@ export default function AboutPage() {
       <main className="relative z-20 mt-28 pb-20">
         {/* Section 1: About Me */}
         <motion.div
-  ref={ref}
-  initial={{ opacity: 0, y: 50 }}
-  animate={isInView ? { opacity: 1, y: 0 } : {}}
-  transition={{ duration: 0.8 }}
-  className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 px-4"
->
-  {/* Text Section */}
-  <div className="flex-1">
-    <h1 className="text-4xl font-bold mb-4">About Me</h1>
-    <p className="text-gray-300 leading-relaxed text-justify">
-       👋 I&apos;m Ritik Kumar, a passionate full stack developer and data enthusiast from Meerut, India. I specialize in crafting beautiful, functional web experiences using modern technologies like <strong>React</strong>, <strong>Next.js</strong>, and <strong>Node.js</strong>, while also exploring the power of <strong>Python</strong> and <strong>machine learning</strong> to solve real-world problems.
-         <br /><br />
-       💡 With a strong eye for design and scalable architecture, I bridge the gap between elegant frontend interfaces and robust backend systems. I enjoy building tools that make a difference—from intuitive UI components to automation tools, job systems, AI interview assistants, and real-time dashboards.
-         <br /><br />
-        📊 I&apos;m also proficient in data analytics using tools like <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>, and I love visualizing insights that drive decisions. Currently, I&apos;m diving deeper into data visualization, microservices, and serverless architectures.
-         <br /><br />
-        🚀 I believe in writing clean, maintainable code and collaborating on products that are fast, secure, and accessible. Let&apos;s build something meaningful together! 🤝
-    </p>
-  </div>
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 px-4"
+        >
+          {/* Text Section */}
+          <div className="flex-1">
+            <h1 className="text-4xl font-bold mb-4">About Me</h1>
+            <p className="text-gray-300 leading-relaxed text-justify">
+              👋 I&apos;m Ritik Kumar, a passionate full stack developer and data enthusiast from Meerut, India. I specialize in crafting beautiful, functional web experiences using modern technologies like <strong>React</strong>, <strong>Next.js</strong>, and <strong>Node.js</strong>, while also exploring the power of <strong>Python</strong> and <strong>machine learning</strong> to solve real-world problems.
+              <br /><br />
+              💡 With a strong eye for design and scalable architecture, I bridge the gap between elegant frontend interfaces and robust backend systems. I enjoy building tools that make a difference—from intuitive UI components to automation tools, job systems, AI interview assistants, and real-time dashboards.
+              <br /><br />
+              📊 I&apos;m also proficient in data analytics using tools like <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>, and I love visualizing insights that drive decisions. Currently, I&apos;m diving deeper into data visualization, microservices, and serverless architectures.
+              <br /><br />
+              🚀 I believe in writing clean, maintainable code and collaborating on products that are fast, secure, and accessible. Let&apos;s build something meaningful together! 🤝
+            </p>
+          </div>
 
-  {/* Image Section */}
-  <div className="flex-shrink-0">
-    <Image
-      src="/profile.jpg"
-      alt="Ritik Kumar"
-      width={180}
-      height={180}
-      className="rounded-full border-4 border-indigo-500"
-    />
-  </div>
-</motion.div>
+          {/* Image Section */}
+          <div className="flex-shrink-0">
+            <Image
+              src="/profile.jpg"
+              alt="Ritik Kumar"
+              width={180}
+              height={180}
+              className="rounded-full border-4 border-indigo-500"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+        </motion.div>
 
         {/* Section 2: Education */}
         <motion.div
@@ -133,15 +137,25 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Section 5: Resume Download Button */}
-        <div className="relative z-[100] mt-20 text-center">
+        {/* Section 5: Resume Download & GitHub */}
+        <div className="relative z-[100] mt-20 flex justify-center gap-6 flex-wrap">
           <motion.a
-             whileHover={{ scale: 1.1 }}
+            whileHover={{ scale: 1.1 }}
             href="/resume.pdf"
             download
-            className="inline-flex items-center gap-2 px-5 py-3 bg-indigo-600 hover:bg-green-700 text-white font-lg font-bold rounded-full shadow-md"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-lg font-bold rounded-full shadow-md transition-colors"
           >
             Download Resume
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            href="https://github.com/kandol007"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white font-lg font-bold rounded-full shadow-md border border-gray-600 transition-colors"
+          >
+            <Github className="w-5 h-5" /> GitHub Profile
           </motion.a>
         </div>
       </main>
