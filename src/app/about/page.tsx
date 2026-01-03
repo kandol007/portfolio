@@ -1,0 +1,192 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+import { BadgeCheck, Code, Database, FileCode2, Layers, Server, BarChart2, BookOpen, Brain, TerminalSquare, Code2, Settings2, Github } from "lucide-react";
+
+const StarBackground = dynamic(() => import("@/components/StarBackground"), { ssr: false });
+
+const skills = [
+  { name: "React.js", level: 90, icon: <Code className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "Next.js", level: 85, icon: <BadgeCheck className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "Node.js", level: 80, icon: <Server className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "MongoDB", level: 75, icon: <Database className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "Tailwind CSS", level: 90, icon: <Layers className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "TypeScript", level: 80, icon: <FileCode2 className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "Java", level: 65, icon: <TerminalSquare className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "C", level: 80, icon: <Code2 className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "C++", level: 85, icon: <Settings2 className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "Excel", level: 90, icon: <BarChart2 className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "Confluence", level: 70, icon: <BookOpen className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "DSA", level: 50, icon: <Brain className="w-4 h-4 mr-2 inline-block" /> },
+  { name: "Python", level: 85, icon: <FileCode2 className="w-4 h-4 mr-2 inline-block" /> },
+];
+
+const timeline = [
+  { year: "2024", event: "Started Building multiple MERN projects" },
+  { year: "2025", event: "Joined open source community" },
+];
+
+export default function AboutPage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  return (
+    <div className="relative min-h-screen bg-transparent text-white overflow-x-hidden">
+      <StarBackground />
+
+      <main className="relative z-20 mt-28 pb-20">
+        {/* Section 1: About Me */}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="max-w-6xl mx-auto flex flex-col md:flex-row items-stretch gap-10 px-4"
+        >
+          {/* Text Section */}
+          <div className="flex-1">
+            <h1 className="text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">About Me</h1>
+            <p className="text-gray-300 leading-relaxed text-justify">
+              👋 I&apos;m Ritik Kumar, a passionate full stack developer and data enthusiast from Meerut, India. I specialize in crafting beautiful, functional web experiences using modern technologies like <strong>React</strong>, <strong>Next.js</strong>, and <strong>Node.js</strong>, while also exploring the power of <strong>Python</strong> and <strong>machine learning</strong> to solve real-world problems.
+              <br /><br />
+              💡 With a strong eye for design and scalable architecture, I bridge the gap between elegant frontend interfaces and robust backend systems. I enjoy building tools that make a difference—from intuitive UI components to automation tools, job systems, AI interview assistants, and real-time dashboards.
+              <br /><br />
+              📊 I&apos;m also proficient in data analytics using tools like <strong>SQL</strong>, <strong>Power BI</strong>, and <strong>Excel</strong>, and I love visualizing insights that drive decisions. Currently, I&apos;m diving deeper into data visualization, microservices, and serverless architectures.
+              <br /><br />
+              🚀 I believe in writing clean, maintainable code and collaborating on products that are fast, secure, and accessible. Let&apos;s build something meaningful together! 🤝
+            </p>
+          </div>
+
+          {/* Image Section */}
+          <div className="hidden md:block w-96 relative flex-shrink-0">
+            <Image
+              src="/profile.jpeg"
+              alt="Ritik Kumar"
+              fill
+              className="object-cover object-top rounded-xl"
+              priority
+              sizes="(max-width: 768px) 100vw, 400px"
+            />
+          </div>
+
+          {/* Mobile Image Section (keep visible for mobile, maybe different style if requested, but for now just mirroring desktop intent or hiding if strictly desktop layout requested. User asked for l*b and full height, suggesting desktop view primarily. Let's make it responsive) */}
+          <div className="md:hidden w-full aspect-square relative">
+            <Image
+              src="/profile.jpeg"
+              alt="Ritik Kumar"
+              fill
+              className="object-cover object-top rounded-xl"
+              priority
+              sizes="100vw"
+            />
+          </div>
+        </motion.div>
+
+        {/* Section 2: Education */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20 max-w-4xl mx-auto"
+        >
+          <h2 className="text-2xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Education</h2>
+          <div className="space-y-4 bg-transparent">
+            <div className="bg-gray-800 p-4 rounded-lg bg-transparent backdrop-blur-sm border-l-4 border-indigo-500">
+              <h3 className="text-indigo-400 font-bold">Master of Computer Applications - AIML</h3>
+              <p className="text-gray-300">UPES, Dehradun | 2023 - 2025</p>
+            </div>
+            <div className="bg-gray-800 p-4 rounded-lg bg-transparent backdrop-blur-sm border-l-4 border-indigo-500">
+              <h3 className="text-indigo-400 font-bold">Bachelor of Computer Applications</h3>
+              <p className="text-gray-300">VICT, Meerut | 2019 - 2022</p>
+            </div>
+            <div className="bg-gray-800 p-4 rounded-lg bg-transparent backdrop-blur-sm border-l-4 border-indigo-500">
+              <h3 className="text-indigo-400 font-bold">12th Standards</h3>
+              <p className="text-gray-300">DPS, Meerut | 2018 - 2019</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Section 3: Skills */}
+        <div className="mt-20 max-w-6xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-10 text-center"><span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Technical</span> Proficiency</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, translateY: -5 }}
+                className="bg-gray-900/40 backdrop-blur-md border border-white/10 p-5 rounded-2xl hover:border-indigo-500/50 hover:bg-gray-800/60 transition-all group shadow-lg"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 bg-indigo-500/10 rounded-xl text-indigo-400 group-hover:text-white group-hover:bg-indigo-500 transition-colors shadow-inner">
+                      {skill.icon}
+                    </div>
+                    <h3 className="font-bold text-lg text-gray-100">{skill.name}</h3>
+                  </div>
+                  <span className="text-indigo-300 font-mono text-sm font-bold bg-indigo-500/10 px-2 py-1 rounded-md">{skill.level}%</span>
+                </div>
+
+                <div className="h-2.5 bg-gray-700/30 rounded-full overflow-hidden border border-white/5">
+                  <motion.div
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 + index * 0.1 }}
+                    className="h-full bg-gradient-to-r from-indigo-600 via-purple-500 to-indigo-400 rounded-full shadow-[0_0_10px_rgba(99,102,241,0.5)]"
+                  />
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 4: Timeline */}
+        <div className="mt-20 max-w-4xl mx-auto">
+          <h2 className="text-2xl font-semibold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Developer Timeline</h2>
+          <div className="space-y-4">
+            {timeline.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.3 }}
+                className="bg-transparent backdrop-blur-sm rounded-lg p-4 border-l-4 border-indigo-500"
+              >
+                <h3 className="text-indigo-400 font-bold">{item.year}</h3>
+                <p className="text-gray-300">{item.event}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* Section 5: Resume Download & GitHub */}
+        <div className="relative z-[100] mt-20 flex justify-center gap-6 flex-wrap">
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            href="/resume.pdf"
+            download
+            className="inline-flex items-center gap-2 px-5 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-lg font-bold rounded-full shadow-md transition-colors"
+          >
+            Download Resume
+          </motion.a>
+
+          <motion.a
+            whileHover={{ scale: 1.1 }}
+            href="https://github.com/kandol007"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-5 py-3 bg-gray-800 hover:bg-gray-700 text-white font-lg font-bold rounded-full shadow-md border border-gray-600 transition-colors"
+          >
+            <Github className="w-5 h-5" /> GitHub Profile
+          </motion.a>
+        </div>
+      </main>
+    </div>
+  );
+}
