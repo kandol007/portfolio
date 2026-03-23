@@ -25,8 +25,8 @@ const skills = [
 ];
 
 const timeline = [
-  { year: "2024", event: "Started Building multiple MERN projects" },
-  { year: "2025", event: "Joined open source community" },
+  { year: "2022", event: "Started Building multiple MERN projects" },
+  { year: "2023", event: "Joined open source community" },
 ];
 
 export default function AboutPage() {

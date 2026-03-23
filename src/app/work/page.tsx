@@ -7,15 +7,15 @@ const StarBackground = dynamic(() => import("@/components/StarBackground"), { ss
 
 const experiences = [
   {
-    role: "Full Stack AIML Developer",
-    company: "Codexus Labs AI Solutions Pvt. Ltd.",
-    duration: "July 2025 – December 2025",
+    role: "Full Stack Developer",
+    company: "Plutobyte Technologies Pvt. Ltd.",
+    duration: "January 2023 – Currently",
     description: "Contributed to full-stack development across the MERN ecosystem and Python-based frameworks. Supported AI/ML-driven feature development by preparing data pipelines, integrating model outputs into the application, and ensuring smooth interaction between frontend components and ML services. Collaborated closely with cross-functional teams to debug issues, enhance performance, and deliver user-centric features on schedule.",
   },
   {
-    role: "Web Development Intern",
+    role: "Full Stack Developer Intern",
     company: "Plutobyte Technologies Pvt. Ltd.",
-    duration: "January 2025 – June 2025",
+    duration: "July 2022 – December 2022",
     description: "Contributed to full-stack development across the MERN ecosystem and Python-based frameworks by building responsive and accessible interfaces using HTML, CSS, JavaScript, and React. Developed and integrated RESTful APIs using Node.js/Express as well as Python frameworks like Django and FastAPI to ensure secure, scalable, and efficient data flow across the application. Worked on backend logic, database interactions with MongoDB, and optimized API performance.",
   },
 ];
