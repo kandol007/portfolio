@@ -32,7 +32,7 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="z-[20] mx-auto flex w-full max-w-7xl flex-col-reverse items-center justify-center gap-4 px-6 pt-20 pb-12 md:min-h-screen md:flex-row md:gap-10 md:px-20 md:pt-28 md:pb-16"
+      className="flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20 mt-32 md:mt-40 w-full z-[20]"
     >
       {/* Left Text Content */}
       <div className="w-full md:w-1/2 flex flex-col gap-5 justify-center text-start">
@@ -78,15 +78,14 @@ const HeroContent = () => {
       {/* Right Image */}
       <motion.div
         variants={slideIn("right", 0.4)}
-        className="flex min-h-[240px] w-full items-center justify-center md:mb-0 md:min-h-0 md:w-1/2"
+        className="w-full md:w-1/2 flex justify-center items-center mb-10 md:mb-0"
       >
         <Image
           src="/mainIconsdark.svg"
           alt="Hero Illustration"
           height={500}
           width={500}
-          className="h-auto w-[72vw] max-w-[280px] sm:w-[58vw] sm:max-w-[320px] md:w-full md:max-w-md"
-          priority
+          className="w-full max-w-xs md:max-w-md"
         />
       </motion.div>
     </motion.div>
