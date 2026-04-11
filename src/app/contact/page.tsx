@@ -10,7 +10,7 @@ const StarBackground = dynamic(() => import("@/components/StarBackground"), { ss
 export default function ContactPage() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({ name: "", email: "", message: "", website: "" });
   const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string }>({ type: null, message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -33,7 +33,7 @@ export default function ContactPage() {
 
       if (response.ok && data.success) {
         setStatus({ type: 'success', message: "Thank you! Your message has been sent." });
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", website: "" });
         setTimeout(() => {
           setStatus({ type: null, message: "" });
         }, 4000);
@@ -158,6 +158,21 @@ export default function ContactPage() {
                 className="w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               ></textarea>
             </div>
+
+            {/* Honeypot field for bots */}
+            <div className="hidden" aria-hidden="true">
+              <label htmlFor="website">Website</label>
+              <input
+                id="website"
+                type="text"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
+
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
