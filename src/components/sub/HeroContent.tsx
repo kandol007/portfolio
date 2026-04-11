@@ -85,7 +85,8 @@ const HeroContent = () => {
           alt="Hero Illustration"
           height={500}
           width={500}
-          className="w-full max-w-xs md:max-w-md"
+          sizes="(max-width: 768px) 320px, 448px"
+          className="w-full h-auto max-w-xs md:max-w-md"
         />
       </motion.div>
     </motion.div>

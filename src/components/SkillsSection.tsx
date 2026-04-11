@@ -58,6 +58,7 @@ const SkillsSection = () => {
                   src={skill.icon}
                   alt={skill.name}
                   fill
+                  sizes="(max-width: 768px) 64px, 80px"
                   className="object-contain"
                 />
               </div>

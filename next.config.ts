@@ -30,6 +30,14 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async rewrites() {
+    return [
+      {
+        source: "/blackhole.webm",
+        destination: "/public_blackhole.webm",
+      },
+    ];
+  },
   async headers() {
     return [
       {

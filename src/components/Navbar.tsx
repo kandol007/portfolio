@@ -55,6 +55,8 @@ export default function Navbar() {
                 src="/logo.png"
                 alt="Logo"
                 fill
+                sizes="40px"
+                loading="eager"
                 className="object-contain" // or rounded-full depending on logo shape, user didn't specify. object-contain is safe.
               />
             </div>
